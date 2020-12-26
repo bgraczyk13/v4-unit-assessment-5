@@ -1,5 +1,6 @@
 module.exports = {
     readPosts: async (req, res) => {
+      let { date }  = new Date;
       let { id } = req.session.user;
       let { mine, search, oldest } = req.query;
       const db = await req.app.get('db')
@@ -38,7 +39,7 @@ module.exports = {
       }
     },
     createPost: (req, res) => {
-      //code here
+      req.app.get('db').post.create_post(req.params.id)
     },
     readPost: (req, res) => {
       req.app.get('db').post.read_post(req.params.id)
