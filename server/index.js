@@ -8,7 +8,7 @@ const express = require('express'),
 
 
 
-const PORT = 4000;
+const PORT = 3000;
 
 const { SESSION_SECRET, CONNECTION_STRING } = process.env;
 
@@ -48,4 +48,4 @@ app.post('/api/post', postCtrl.createPost);
 app.get('/api/post/:id', postCtrl.readPost);
 app.delete('/api/post/:id', postCtrl.deletePost)
 
-app.listen(4000, _ => console.log(`running on ${4000}`));
+app.listen(3000, _ => console.log(`running on ${3000}`));
